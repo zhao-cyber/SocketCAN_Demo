@@ -1,0 +1,49 @@
+VERSION ""
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+
+BS_:
+
+BU_: ECU1 ECU2
+
+BO_ 1 Message1: 8 ECU1
+ SG_ Signal1 : 0|8@1+ (1,0) [0|255] "km/h" ECU2
+ SG_ Signal2 : 8|8@1+ (0.5,0) [0|100] "%" ECU2
+
+BO_ 2 Message2: 8 ECU2
+ SG_ Signal3 : 0|16@1- (0.01,0) [0|655.35] "V" ECU1
+ SG_ Signal4 : 16|16@1- (0.01,0) [0|655.35] "A" ECU1
+
+CM_ BO_ 1 "This is a message with two signals";
+CM_ BO_ 2 "This is another message with two signals";
+CM_ SG_ 1 Signal1 "This is a signal for speed";
+CM_ SG_ 1 Signal2 "This is a signal for throttle";
+CM_ SG_ 2 Signal3 "This is a signal for voltage";
+CM_ SG_ 2 Signal4 "This is a signal for current";
